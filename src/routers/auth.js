@@ -19,5 +19,8 @@ const authRouter = express.Router();
 // 	}
 // });
 authRouter.post('/register', AuthController.register);
+authRouter.get('/getAllUser', AuthController.getAllUser);
+authRouter.get('/userById', AuthController.getUserById);
+
 
 export default authRouter;

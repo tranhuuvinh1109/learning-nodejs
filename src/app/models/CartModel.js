@@ -4,8 +4,8 @@ const { Schema } = mongoose;
 
 const CartSchema = new Schema(
 	{
-		idPhone: { type: Array, required: true },
-		idUser: { type: String, required: true }
+		idPhone: { type: Array, default: [] },
+		idUser: { type: String }
 	},
 	{
 		timestamps: true,
