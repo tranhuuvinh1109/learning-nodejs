@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon --experimental-modules src/index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vinh, dak",
