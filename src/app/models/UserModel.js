@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 // 0: user, 1: admin
-const UseSchema = new Schema(
+const UserSchema = new Schema(
 	{
 		email: { type: String, required: true, unique: true },
 		username: { type: String, required: true },
@@ -17,5 +17,5 @@ const UseSchema = new Schema(
 	},
 );
 
-const User = mongoose.model('User', UseSchema);
+const User = mongoose.model('User', UserSchema);
 export default User;
