@@ -81,6 +81,62 @@ class PhoneController {
         }
     }
 
+    async updatePhoneByName(req, res) {
+        try {
+            const name = req.params.name; // Lấy ID từ tham số động
+            const updateData = req.body; // Dữ liệu cập nhật từ body của yêu cầu
+
+            // Sử dụng findOneAndUpdate để cập nhật thông tin điện thoại
+            const updatedPhone = await Phone.findOneAndUpdate({ name: name }, updateData, { new: true });
+
+            if (!updatedPhone) {
+                return res.status(400).json({ message: 'Phone not exist' });
+            }
+
+            return res.status(200).json({ message: 'Phone updated successfully', data: updatedPhone });
+
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Server error' });
+        }
+    }
+
+    async deletePhoneById(req, res) {
+        try {
+            const phoneId = req.params.id; // Lấy ID từ tham số động
+
+            // Sử dụng findOneAndDelete để xóa điện thoại
+            const deletedPhone = await Phone.findOneAndDelete({ _id: phoneId });
+
+            if (!deletedPhone) {
+                return res.status(400).json({ message: 'Phone not exist' });
+            }
+
+            return res.status(200).json({ message: 'Phone deleted successfully', data: deletedPhone });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Server error' });
+        }
+    }
+
+    async deletePhoneByName(req, res) {
+        try {
+            const name = req.params.name; // Lấy ID từ tham số động
+
+            // Sử dụng findOneAndDelete để xóa điện thoại
+            const deletedPhone = await Phone.findOneAndDelete({ name: name });
+
+            if (!deletedPhone) {
+                return res.status(400).json({ message: 'Phone not exist' });
+            }
+
+            return res.status(200).json({ message: 'Phone deleted successfully', data: deletedPhone });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ message: 'Server error' });
+        }
+    }
+
 
 
 }
