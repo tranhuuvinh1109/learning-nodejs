@@ -5,7 +5,7 @@ const cartRouter = express.Router();
 
 cartRouter.post('/createNewCart', CartController.createNewCart);
 
-// phoneRouter.get('/getAllPhone', PhoneController.getAllPhone);
+cartRouter.get('/getAllCart', CartController.getAllCart);
 // phoneRouter.get('/getPhoneById/:id', PhoneController.getPhoneById);
 // phoneRouter.get('/getPhoneByName/:name', PhoneController.getPhoneByName);
 

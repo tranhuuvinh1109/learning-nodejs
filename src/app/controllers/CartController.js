@@ -15,6 +15,19 @@ class CartController {
             res.status(500).json({ message: 'error' });
         }
     }
+
+    async getAllCart(req, res) {
+        try {
+            const allCarts = await Cart.find();
+            if (allCarts) {
+                res.status(200).json({ message: 'data exist', data: allCarts });
+            } else {
+                res.status(400).json({ message: 'data null' });
+            }
+        } catch (error) {
+            res.status(500).json({ message: 'data error' });
+        }
+    }
 }
 
 
