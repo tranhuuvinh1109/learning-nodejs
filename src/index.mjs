@@ -3,9 +3,9 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import routes from './routers/index.js';
-const port = 3000;
+const port = 4000;
 const app = express();
-const MONGOOSE_URL = 'mongodb+srv://booking:Hb1wHZGMe8G6okBn@cluster0.qgqj4oa.mongodb.net/shop';
+const MONGOOSE_URL = 'mongodb+srv://tranhuuvinh1109:vinh1109@cluster0.fg9i8xq.mongodb.net/vinh-cinema';
 
 
 async function connectDB () {
